@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Structure</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 50% / 30%; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: visible;
+    height: 100px; /* Adjust height as needed */
+    margin: 0 auto; /* Center the header */
+    max-width: 1300px; /* Adjust max-width as needed */
+}
+
+.school-name {
+    font-size: 30px; /* Adjust size as needed */
+    color: #ffb900; /* Adjust color as needed */
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a {
+    color: #4b2d83;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffb900;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 150px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 9999; 
+    top: 100%; 
+    left: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px); 
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); 
+}
+
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #4B0082;
+}
+
+.btn-admission {
+    padding: 10px 20px;
+    background-color: #ffb900;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-admission:hover {
+    background-color: #e0a800;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.styled-table thead tr {
+    background-color: #4CAF50;
+    color: white;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr.active-row {
+    background-color: #f2f2f2;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #4CAF50;
+}
+
+
+
+/* Footer Section */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo img {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+.footer-logo p {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.footer-links h3, .footer-contact h3 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #fff;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    margin-top: 20px;
+    text-align: center;
+    color: #ccc;
+    font-size: 0.9em;
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            
+            <span class="school-name">Holy Kids School</span>
+        </div>
+        <!-- <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Academics</a></li>
+                <li><a href="#">Facilities</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav> -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#" >Academics</a>
+                    <div class="dropdown-content">
+                        <a href="Admission-procedure.html">Admission Procedure</a>
+                        <br>
+                        <a href="Syllabus.html">Syllabus</a>
+                        <br>
+                        <a href="Fee-structure.html">Fee Structure</a>
+                        <br>
+                        <a href="Results.html">Result</a>
+                        
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" >Facilities</a>
+                    <div class="dropdown-content">
+                        <a href="Playground.html">Playground</a>
+                        <br>
+                        <a href="Smart-class.html">Smart Class</a>
+                        <br>
+                        <a href="Transport.html">Transport</a>
+                    </div>
+                </li>
+                <li><a href="Notices.html">Notices</a></li>
+               
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        
+        <a href="Admission.html" class="btn-admission">Admission Now</a>
+    </header>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Structure</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fee Structure</h1>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Tuition Fee</th>
+                    <th>Admission Fee</th>
+                    <th>Other Charges</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Class 1</td>
+                    <td>$500</td>
+                    <td>$100</td>
+                    <td>$50</td>
+                </tr>
+                <tr class="active-row">
+                    <td>Class 2</td>
+                    <td>$550</td>
+                    <td>$100</td>
+                    <td>$60</td>
+                </tr>
+                <tr>
+                    <td>Class 3</td>
+                    <td>$600</td>
+                    <td>$100</td>
+                    <td>$70</td>
+                </tr>
+                <!-- Add more classes as needed -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="path_to_logo.png" alt="StudyKids Logo">
+                <p>Education is not the filling of a pail, but the lighting of a fire.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Our Courses</h3>
+                <ul>
+                    <li><a href="#">Science</a></li>
+                    <li><a href="#">Mathematics</a></li>
+                    <li><a href="#">Arts & Humanities</a></li>
+                    <li><a href="#">Languages</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Address: 123 Main St, Anytown, USA</p>
+                <p>Email: info@studykids.com</p>
+                <p>Phone: +1 234 567 890</p>
+                <div class="social-icons">
+                    <a href="#"><img src="path_to_facebook_icon.png" alt="Facebook"></a>
+                    <a href="#"><img src="path_to_twitter_icon.png" alt="Twitter"></a>
+                    <a href="#"><img src="path_to_instagram_icon.png" alt="Instagram"></a>
+                    <a href="#"><img src="path_to_linkedin_icon.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2024 StudyKids. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

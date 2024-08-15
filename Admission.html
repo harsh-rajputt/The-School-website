@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 50% / 30%; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: visible;
+    height: 100px; /* Adjust height as needed */
+    margin: 0 auto; /* Center the header */
+    max-width: 1300px; /* Adjust max-width as needed */
+}
+
+.school-name {
+    font-size: 30px; /* Adjust size as needed */
+    color: #ffb900; /* Adjust color as needed */
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a {
+    color: #4b2d83;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffb900;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 150px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 9999; 
+    top: 100%; 
+    left: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px); 
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); 
+}
+
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #4B0082;
+}
+
+.btn-admission {
+    padding: 10px 20px;
+    background-color: #ffb900;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-admission:hover {
+    background-color: #e0a800;
+}
+.admission-section {
+            padding: 50px 20px;
+            background: url('images/admission-bg.jpg') no-repeat center center/cover;
+        }
+
+        .admission-content {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .admission-content h2 {
+            font-size: 32px;
+            color: #4B0082;
+            margin-bottom: 20px;
+        }
+
+        .admission-content p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .admission-content .btn-apply {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #4B0082;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .admission-content .btn-apply:hover {
+            background-color: #6A0DAD;
+        }
+
+        .admission-content ul {
+            list-style: disc;
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        .admission-content ul li {
+            margin-bottom: 10px;
+        }
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo img {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+.footer-logo p {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.footer-links h3, .footer-contact h3 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #ffb900;
+}
+
+.footer-contact p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.social-icons a img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.8em;
+    color: #ccc;
+    border-top: 1px solid #444;
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <span class="school-name">Holy Kids School</span>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#">Academics</a>
+                    <div class="dropdown-content">
+                        <a href="Admission-procedure.html">Admission Procedure</a>
+                        <a href="Syllabus.html">Syllabus</a>
+                        <a href="Fee-structure.html">Fee Structure</a>
+                        <a href="Results.html">Result</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Facilities</a>
+                    <div class="dropdown-content">
+                        <a href="Playground.html">Playground</a>
+                        <a href="Smart-class.html">Smart Class</a>
+                        <a href="Transport.html">Transport</a>
+                    </div>
+                </li>
+                <li><a href="Notices.html">Notices</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <a href="Admission.html" class="btn-admission">Admission Now</a>
+    </header>
+
+    
+
+    <section class="admission-section">
+        <div class="admission-content">
+            <h2>Admissions Now Open</h2>
+            <p>Welcome to Holy Kids School! We are delighted to announce that admissions are now open for the upcoming academic year. We invite parents and guardians to apply for admission for their children in the following grades:</p>
+            <ul>
+                <li>Pre-Nursery</li>
+                <li>Nursery</li>
+                <li>Kindergarten</li>
+                <li>Grade 1 to Grade 12</li>
+            </ul>
+
+            <p><strong>Documents Required for Admission:</strong></p>
+            <ul>
+                <li>Birth Certificate</li>
+                <li>Transfer Certificate (if applicable)</li>
+                <li>Report Card of the last grade attended</li>
+                <li>Passport-sized photographs of the student</li>
+                <li>Parent's ID proof</li>
+            </ul>
+
+            <p><strong>Admission Process:</strong></p>
+            <ul>
+                <li>Step 1: Fill out the online application form.</li>
+                <li>Step 2: Submit the required documents.</li>
+                <li>Step 3: Attend the interview or entrance test (if applicable).</li>
+                <li>Step 4: Receive the admission offer letter.</li>
+                <li>Step 5: Pay the admission fee to confirm your seat.</li>
+            </ul>
+
+            <a href="#" class="btn-apply">Apply Now</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="path_to_logo.png" alt="StudyKids Logo">
+                <p>Education is not the filling of a pail, but the lighting of a fire.</p>
+            </div>
+            <div class="footer-links">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Our Courses</h3>
+                <ul>
+                    <li><a href="#">Science</a></li>
+                    <li><a href="#">Mathematics</a></li>
+                    <li><a href="#">Arts & Humanities</a></li>
+                    <li><a href="#">Languages</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Address: 123 Main St, Anytown, USA</p>
+                <p>Email: info@studykids.com</p>
+                <p>Phone: +1 234 567 890</p>
+                <div class="social-icons">
+                    <a href="#"><img src="path_to_facebook_icon.png" alt="Facebook"></a>
+                    <a href="#"><img src="path_to_twitter_icon.png" alt="Twitter"></a>
+                    <a href="#"><img src="path_to_instagram_icon.png" alt="Instagram"></a>
+                    <a href="#"><img src="path_to_linkedin_icon.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 StudyKids. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
